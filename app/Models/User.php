@@ -57,4 +57,9 @@ class User extends Authenticatable
         'confirm_password' => 'required',
         'user_type' => 'required'
     ];
+
+    public function appointments()
+    {
+    	return $this->belongsTo('App\Models\Appointment','dr_id','id')->withDefault();
+    }
 }
